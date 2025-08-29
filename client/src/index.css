@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,7 +34,7 @@
   --sidebar-accent-foreground: hsl(25, 40%, 25%);
   --sidebar-border: hsl(35, 40%, 80%);
   --sidebar-ring: hsl(25, 60%, 45%);
-  --font-sans: 'Comic Neue', cursive, system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: 0.75rem;
@@ -91,7 +91,7 @@
   --sidebar-accent-foreground: hsl(203.7736, 87.6033%, 52.5490%);
   --sidebar-border: hsl(205.7143, 15.7895%, 26.0784%);
   --sidebar-ring: hsl(202.8169, 89.1213%, 53.1373%);
-  --font-sans: 'Comic Neue', cursive, system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: 0.75rem;

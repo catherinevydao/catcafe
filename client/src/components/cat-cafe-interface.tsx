@@ -76,19 +76,19 @@ export function CatCafeInterface() {
       </div>
 
       {/* Main Cafe Counter Section */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+      <div className="flex flex-col items-center justify-center gap-8">
         
+        {/* Cat Server */}
+        <div>
+          <CatServer dialog={catDialog} isPreparingDrink={isPreparingDrink} />
+        </div>
+
         {/* Drink Counter */}
-        <div className="order-1 lg:order-1">
+        <div>
           <DrinkCounter 
             currentDrink={currentDrink}
             isPreparingDrink={isPreparingDrink}
           />
-        </div>
-
-        {/* Cat Server */}
-        <div className="order-2 lg:order-2">
-          <CatServer dialog={catDialog} isPreparingDrink={isPreparingDrink} />
         </div>
       </div>
 
