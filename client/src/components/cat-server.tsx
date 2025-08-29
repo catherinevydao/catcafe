@@ -26,15 +26,15 @@ export function CatServer({ dialog, isPreparingDrink }: CatServerProps) {
         >
           {/* Apron */}
           <path 
-            d="M60 120 L60 200 L140 200 L140 120 L120 110 L80 110 Z" 
-            fill="var(--cafe-cream)"
+            d="M50 115 L50 210 L150 210 L150 115 L125 105 L75 105 Z" 
+            fill="#ff7875"
             stroke="var(--cafe-brown)" 
             strokeWidth="3"
           />
           
           {/* Apron strings */}
-          <path d="M80 110 Q70 100 60 90" stroke="var(--cafe-brown)" strokeWidth="2" fill="none"/>
-          <path d="M120 110 Q130 100 140 90" stroke="var(--cafe-brown)" strokeWidth="2" fill="none"/>
+          <path d="M75 105 Q65 95 55 85" stroke="var(--cafe-brown)" strokeWidth="2" fill="none"/>
+          <path d="M125 105 Q135 95 145 85" stroke="var(--cafe-brown)" strokeWidth="2" fill="none"/>
           
           {/* Cat body */}
           <ellipse 
@@ -138,10 +138,10 @@ export function CatServer({ dialog, isPreparingDrink }: CatServerProps) {
           
           {/* Apron pocket */}
           <rect 
-            x="85" 
-            y="150" 
-            width="30" 
-            height="25" 
+            x="80" 
+            y="155" 
+            width="40" 
+            height="30" 
             rx="5" 
             fill="var(--cafe-background)"
             stroke="var(--cafe-brown)" 
