@@ -48,17 +48,28 @@ export function CatCafeInterface() {
 
     setIsPreparingDrink(true);
     
-    // Special dialog for martini orders
-    if (drinkType === 'surprise') {
-      setCatDialog("Purr... A martini? (day drinking??) *whiskers twitch* Let me prepare that for you!");
-    } else {
-      setCatDialog("Purr... Let me prepare that for you! *whiskers twitch*");
+    // Different preparation messages for each drink
+    if (drinkType === 'coffee') {
+      setCatDialog("grinding the beans... doing some latte art.. meow..");
+    } else if (drinkType === 'matcha') {
+      setCatDialog("sifting the matcha... adding oat milk cause I know you're lactose... meow..");
+    } else if (drinkType === 'surprise') {
+      setCatDialog("umm... okay... meow?");
     }
     
     // Simulate drink preparation time
     setTimeout(() => {
       setCurrentDrink(drink);
-      setCatDialog("Meow! Your drink is ready! Enjoy! 😸");
+      
+      // Different completion messages for each drink
+      if (drinkType === 'coffee') {
+        setCatDialog("enjoy your viet coffee, Cảm ơn!");
+      } else if (drinkType === 'matcha') {
+        setCatDialog("enjoy your matcha you performative!");
+      } else if (drinkType === 'surprise') {
+        setCatDialog("what day drinking??? lowkey same meow");
+      }
+      
       setIsPreparingDrink(false);
       
       // Reset dialog after a moment

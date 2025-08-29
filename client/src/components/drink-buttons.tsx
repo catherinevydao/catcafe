@@ -45,7 +45,7 @@ export function DrinkButtons({ onOrderDrink, isPreparingDrink }: DrinkButtonsPro
       </button>
 
       <button 
-        className="drink-button sketch-border bg-cafe-accent text-white px-8 py-4 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        className="drink-button sketch-border bg-cafe-accent text-cafe-background px-8 py-4 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={() => onOrderDrink('surprise')}
         disabled={isPreparingDrink}
         data-testid="button-surprise"
