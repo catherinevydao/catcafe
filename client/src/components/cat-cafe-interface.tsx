@@ -23,7 +23,7 @@ export const drinks: Record<string, Drink> = {
     id: 'matcha',
     name: 'Matcha Latte',
     icon: '🍵',
-    color: '#90EE90',
+    color: '#22c55e',
     description: 'Smooth and creamy matcha goodness!'
   },
   surprise: {
