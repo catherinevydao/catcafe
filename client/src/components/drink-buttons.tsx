@@ -35,10 +35,11 @@ export function DrinkButtons({ onOrderDrink, isPreparingDrink }: DrinkButtonsPro
           {/* Matcha latte cup with leaf design */}
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-            <path d="M6 12c2-2 6-2 8 0 2 2 2 6 0 6-2 0-6-4-8-6z" fill="#22c55e" opacity="0.7"/>
-            <circle cx="10" cy="11" r="1" fill="#16a34a"/>
-            <circle cx="12" cy="13" r="0.5" fill="#16a34a"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" fill="#22c55e" opacity="0.9"/>
+            <path d="M6 12c2-2 6-2 8 0 2 2 2 6 0 6-2 0-6-4-8-6z" fill="#16a34a" opacity="0.8"/>
+            <circle cx="10" cy="11" r="1" fill="#15803d"/>
+            <circle cx="12" cy="13" r="0.5" fill="#15803d"/>
+            <path d="M8 10 Q10 9 12 10 Q14 11 16 10" stroke="#15803d" strokeWidth="1.5" fill="none" opacity="0.6"/>
           </svg>
           <span>Matcha Latte</span>
         </div>
