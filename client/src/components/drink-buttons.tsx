@@ -21,7 +21,7 @@ export function DrinkButtons({ onOrderDrink, isPreparingDrink }: DrinkButtonsPro
             <line x1="10" y1="1" x2="10" y2="4"/>
             <line x1="14" y1="1" x2="14" y2="4"/>
           </svg>
-          <span>Cup of Coffee</span>
+          <span>Viet Coffee</span>
         </div>
       </button>
 

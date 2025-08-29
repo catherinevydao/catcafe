@@ -14,7 +14,7 @@ export interface Drink {
 export const drinks: Record<string, Drink> = {
   coffee: {
     id: 'coffee',
-    name: 'Cup of Coffee',
+    name: 'Viet Coffee',
     icon: '☕',
     color: '#8B4513',
     description: 'A perfect brew to start your day!'
@@ -28,7 +28,7 @@ export const drinks: Record<string, Drink> = {
   },
   surprise: {
     id: 'surprise',
-    name: 'Espresso Martini',
+    name: 'Martini',
     icon: '🍸',
     color: '#4169E1',
     description: 'A delightful surprise just for you!'
@@ -47,7 +47,13 @@ export function CatCafeInterface() {
     if (!drink) return;
 
     setIsPreparingDrink(true);
-    setCatDialog("Purr... Let me prepare that for you! *whiskers twitch*");
+    
+    // Special dialog for martini orders
+    if (drinkType === 'surprise') {
+      setCatDialog("Purr... A martini? (day drinking??) *whiskers twitch* Let me prepare that for you!");
+    } else {
+      setCatDialog("Purr... Let me prepare that for you! *whiskers twitch*");
+    }
     
     // Simulate drink preparation time
     setTimeout(() => {
