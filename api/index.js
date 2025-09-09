@@ -1,24 +1,40 @@
-import express from 'express';
-import { storage } from '../server/storage.js';
+export default async function handler(req, res) {
+  // Set CORS headers for all requests
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
 
-// Add your API routes here
-// For example:
-// app.get('/api/users', async (req, res) => {
-//   const users = await storage.getUsers();
-//   res.json(users);
-// });
+  // Simple routing based on URL path
+  const { url, method } = req;
+  
+  // Health check endpoint
+  if (url === '/api/health' && method === 'GET') {
+    res.status(200).json({ 
+      status: 'OK', 
+      message: 'Cat Café API is running!',
+      timestamp: new Date().toISOString()
+    });
+    return;
+  }
 
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Cat Café API is running!' });
-});
+  // Add more API routes here as needed
+  // For example:
+  // if (url === '/api/users' && method === 'GET') {
+  //   // Handle get users
+  //   res.status(200).json({ users: [] });
+  //   return;
+  // }
 
-// Catch-all handler
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-export default app;
+  // Default response for unmatched routes
+  res.status(404).json({ 
+    error: 'Route not found',
+    path: url,
+    method 
+  });
+}
