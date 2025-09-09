@@ -13,68 +13,74 @@ export interface Drink {
 
 export const drinks: Record<string, Drink> = {
   coffee: {
-    id: 'coffee',
-    name: 'Viet Coffee',
-    icon: '☕',
-    color: '#8B4513',
-    description: 'A perfect brew to start your day!'
+    id: "coffee",
+    name: "Viet Coffee",
+    icon: "☕",
+    color: "#8B4513",
+    description: "A perfect brew to start your day!",
   },
   matcha: {
-    id: 'matcha',
-    name: 'Matcha Latte',
-    icon: '🍵',
-    color: '#22c55e',
-    description: 'Smooth and creamy matcha goodness!'
+    id: "matcha",
+    name: "Matcha Latte",
+    icon: "🍵",
+    color: "#22c55e",
+    description: "Smooth and creamy matcha goodness!",
   },
   surprise: {
-    id: 'surprise',
-    name: 'Martini',
-    icon: '🍸',
-    color: '#4169E1',
-    description: 'A delightful surprise just for you!'
-  }
+    id: "surprise",
+    name: "Martini",
+    icon: "🍸",
+    color: "#4169E1",
+    description: "A delightful surprise just for you!",
+  },
 };
 
 export function CatCafeInterface() {
   const [currentDrink, setCurrentDrink] = useState<Drink | null>(null);
   const [isPreparingDrink, setIsPreparingDrink] = useState(false);
-  const [catDialog, setCatDialog] = useState("Meow! I'm your cat server, meow! What can I get for you?");
+  const [catDialog, setCatDialog] = useState(
+    "Meow! I'm your cat server, meow! What can I get for you?",
+  );
 
   const handleOrderDrink = async (drinkType: string) => {
     if (isPreparingDrink) return;
-    
+
     const drink = drinks[drinkType];
     if (!drink) return;
 
     setIsPreparingDrink(true);
-    
+
     // Different preparation messages for each drink
-    if (drinkType === 'coffee') {
+    if (drinkType === "coffee") {
       setCatDialog("grinding the beans... doing some latte art.. meow..");
-    } else if (drinkType === 'matcha') {
-      setCatDialog("sifting the matcha... adding oat milk cause I know you're lactose... meow..");
-    } else if (drinkType === 'surprise') {
+    } else if (drinkType === "matcha") {
+      setCatDialog(
+        "sifting the matcha... adding oat milk cause I know you're lactose... meow..",
+      );
+    } else if (drinkType === "surprise") {
       setCatDialog("umm... okay... meow?");
     }
-    
+
     // Simulate drink preparation time
     setTimeout(() => {
       setCurrentDrink(drink);
-      
+
       // Different completion messages for each drink
-      if (drinkType === 'coffee') {
+      if (drinkType === "coffee") {
         setCatDialog("enjoy your viet coffee, Cảm ơn!");
-      } else if (drinkType === 'matcha') {
+      } else if (drinkType === "matcha") {
         setCatDialog("enjoy your matcha you performative!");
-      } else if (drinkType === 'surprise') {
+      } else if (drinkType === "surprise") {
         setCatDialog("what day drinking??? lowkey same meow");
       }
-      
+
       setIsPreparingDrink(false);
-      
+
       // Reset dialog after a moment
       setTimeout(() => {
-        setCatDialog("Meow! I'm your cat server, meow! What can I get for you?");
+        setCatDialog(
+          "Meow! I'm your cat server, meow! What can I get for you?",
+        );
       }, 3000);
     }, 1500);
   };
@@ -83,10 +89,12 @@ export function CatCafeInterface() {
     <div className="w-full max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-cafe-brown mb-8">Welcome to Cat Café</h1>
-        
+        <h1 className="text-4xl font-bold text-cafe-brown mb-8">
+          Welcome to Cat Café
+        </h1>
+
         {/* Drink Selection Buttons */}
-        <DrinkButtons 
+        <DrinkButtons
           onOrderDrink={handleOrderDrink}
           isPreparingDrink={isPreparingDrink}
         />
@@ -94,7 +102,6 @@ export function CatCafeInterface() {
 
       {/* Main Cafe Counter Section */}
       <div className="flex flex-col items-center justify-center gap-8">
-        
         {/* Cat Server */}
         <div>
           <CatServer dialog={catDialog} isPreparingDrink={isPreparingDrink} />
@@ -102,7 +109,7 @@ export function CatCafeInterface() {
 
         {/* Drink Counter */}
         <div>
-          <DrinkCounter 
+          <DrinkCounter
             currentDrink={currentDrink}
             isPreparingDrink={isPreparingDrink}
           />
